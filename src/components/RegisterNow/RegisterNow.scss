@@ -1,0 +1,89 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/fonts.scss" as fonts;
+
+.section {
+
+    font-family: fonts.$mainFont;
+    margin: 20px 0;
+    padding: 20px;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 16px;
+        padding: 15px;
+
+        // background: linear-gradient(135deg, #1a0d10 0%, #12080a 100%);
+        // background-color: #111c2e;
+        // background: radial-gradient(circle at center,
+        //         rgba(255, 0, 0, 0.18), // красное мягкое свечение
+        //         rgba(17, 28, 46, 1) 70% // твой основной цвет #111c2e
+        //     );
+        background:
+            radial-gradient(circle at top left, rgba(255, 0, 0, 0.18), transparent 60%),
+            radial-gradient(circle at bottom right, rgba(255, 0, 0, 0.15), transparent 60%),
+            #111c2e;
+
+
+        .content-header {
+
+            display: flex;
+            gap: 10px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .title-container {
+
+                display: flex;
+                flex-direction: column;
+
+                :first-child {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #fff;
+                }
+
+                :last-child {
+                    font-size: 12px;
+                    color: $greyText;
+                }
+            }
+        }
+
+
+        .btn-register {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            background-color: #de2827;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+
+
+            img{
+                width: 20px;
+            }
+
+            p {
+                font-family: fonts.$mainFont;
+                font-weight: bold;
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+
+        .text-bottom {
+            text-align: center;
+            font-size: 10px;
+            color: $greyText;
+        }
+    }
+}

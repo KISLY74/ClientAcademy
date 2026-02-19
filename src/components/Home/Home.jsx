@@ -1,22 +1,26 @@
 import { useState, useEffect } from "react";
+import "./Home.scss"
+import Header from "../Header/Header";
+import RegisterNow from "../RegisterNow/RegisterNow";
 
 export default function Home() {
+    const [isReg, setIsReg] = useState(false)
+    const [tgId, setTgId] = useState(8222966719);
+    const [name, setName] = useState("Alex")
 
-    const [tgId, setTgId] = useState(null);
+    // const debugAlert = () => {
+    //     const tg = window.Telegram;
+    //     const wa = window.Telegram?.WebApp;
+    //     const data = window.Telegram?.WebApp?.initDataUnsafe;
 
-    const debugAlert = () => {
-        const tg = window.Telegram;
-        const wa = window.Telegram?.WebApp;
-        const data = window.Telegram?.WebApp?.initDataUnsafe;
-
-        alert(
-            "Telegram: " + JSON.stringify(tg) + "\n\n" +
-            "WebApp: " + JSON.stringify(wa) + "\n\n" +
-            "initDataUnsafe: " + JSON.stringify(data) + "\n\n" +
-            "user: " + JSON.stringify(data?.user) + "\n\n" +
-            "user.id: " + data?.user?.id
-        );
-    };
+    //     alert(
+    //         "Telegram: " + JSON.stringify(tg) + "\n\n" +
+    //         "WebApp: " + JSON.stringify(wa) + "\n\n" +
+    //         "initDataUnsafe: " + JSON.stringify(data) + "\n\n" +
+    //         "user: " + JSON.stringify(data?.user) + "\n\n" +
+    //         "user.id: " + data?.user?.id
+    //     );
+    // };
 
     const handleRegister = () => {
         if (!tgId) {
@@ -43,8 +47,9 @@ export default function Home() {
     return (
         <div className="home">
             <div className="home-container">
-                <button className="btn" onClick={handleRegister}>Register</button>
-                <button className="btn" onClick={debugAlert} style={{ marginTop: 20 }}>Debug</button>
+                <Header name={name}/>
+                <RegisterNow/>
+                {/* <button className="btn" onClick={handleRegister}>Register</button> */}
             </div>
         </div>
     );

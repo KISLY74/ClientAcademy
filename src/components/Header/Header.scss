@@ -1,0 +1,45 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/fonts.scss" as fonts;
+
+.header {
+
+    background-color: $fonHeader;
+    font-family: fonts.$mainFont;
+    color: $mainText;
+
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+
+        .content-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 45px;
+            }
+
+            p {
+                font-weight: bold;
+
+                span {
+                    color: #01bff9;
+                }
+            }
+        }
+
+        .content-avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 46px;
+            }
+        }
+    }
+}
