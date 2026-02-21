@@ -17,22 +17,47 @@
         .active {
             color: #00c3fd;
         }
-        
-        /* Активные иконки */
+
+        .icon {
+            width: 26px;
+            height: 26px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* обычные */
+        .icon.home {
+            background-image: url("/images/home.png");
+        }
+
+        .icon.signals {
+            background-image: url("/images/signals.png");
+        }
+
+        .icon.lessons {
+            background-image: url("/images/lessons.png");
+        }
+
+        .icon.profile {
+            background-image: url("/images/profile.png");
+        }
+
+        /* активные */
         .active .icon.home {
-            content: url("/images/homeactive.png");
+            background-image: url("/images/homeactive.png");
         }
 
         .active .icon.signals {
-            content: url("/images/signalsactive.png");
+            background-image: url("/images/signalsactive.png");
         }
 
         .active .icon.lessons {
-            content: url("/images/lessonsactive.png");
+            background-image: url("/images/lessonsactive.png");
         }
 
         .active .icon.profile {
-            content: url("/images/profileactive.png");
+            background-image: url("/images/profileactive.png");
         }
 
         a {
@@ -43,27 +68,6 @@
 
             span {
                 font-size: 12px;
-            }
-
-            img {
-                width: 25px;
-            }
-
-            /* Базовые иконки */
-            .icon.home {
-                content: url("/images/home.png");
-            }
-
-            .icon.signals {
-                content: url("/images/signals.png");
-            }
-
-            .icon.lessons {
-                content: url("/images/lessons.png");
-            }
-
-            .icon.profile {
-                content: url("/images/profile.png");
             }
 
         }
