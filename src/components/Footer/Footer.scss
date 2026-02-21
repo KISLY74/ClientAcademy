@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as *;
 @use "../../styles/fonts.scss" as fonts;
 
-.footer{
+.footer {
     position: fixed;
     bottom: 0;
     font-family: fonts.$mainFont;
@@ -9,27 +9,63 @@
     background-color: #0e1118;
     width: 100%;
 
-    &-nav{
+    &-nav {
         display: flex;
         justify-content: space-around;
         padding: 10px 0;
 
-            .active{
-                color: #00c3fd;
-            }
+        .active {
+            color: #00c3fd;
+        }
+        
+        /* Активные иконки */
+        .active .icon.home {
+            content: url("/images/homeactive.png");
+        }
 
-            a{
+        .active .icon.signals {
+            content: url("/images/signalsactive.png");
+        }
+
+        .active .icon.lessons {
+            content: url("/images/lessonsactive.png");
+        }
+
+        .active .icon.profile {
+            content: url("/images/profileactive.png");
+        }
+
+        a {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
 
-            span{
+            span {
                 font-size: 12px;
             }
-            img{
+
+            img {
                 width: 25px;
             }
+
+            /* Базовые иконки */
+            .icon.home {
+                content: url("/images/home.png");
+            }
+
+            .icon.signals {
+                content: url("/images/signals.png");
+            }
+
+            .icon.lessons {
+                content: url("/images/lessons.png");
+            }
+
+            .icon.profile {
+                content: url("/images/profile.png");
+            }
+
         }
     }
 }

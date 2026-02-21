@@ -7,19 +7,19 @@ export default function Footer() {
     return <footer className="footer">
         <nav className="footer-nav">
             <Link to="/" className={pathname === "/" ? "active" : ""}>
-                <img src={`/images/${pathname === "/" ? "homeactive" : "home"}.png`} alt="" />
+                <img className="icon home" alt="" />
                 <span>Home</span>
             </Link>
             <Link to="/signals" className={pathname === "/signals" ? "active" : ""} >
-                <img src={`/images/${pathname === "/signals" ? "signalsactive" : "signals"}.png`} alt="" />
+                <img className="icon signals" alt="" />
                 <span>Signals</span>
             </Link>
             <Link to="/lessons" className={pathname === "/lessons" ? "active" : ""} >
-                <img src={`/images/${pathname === "/lessons" ? "lessonsactive" : "lessons"}.png`} alt="" />
+                <img className="icon lessons" alt="" />
                 <span>Lessons</span>
             </Link>
             <Link to="/profile" className={pathname === "/profile" ? "active" : ""} >
-                <img src={`/images/${pathname === "/profile" ? "profileactive" : "profile"}.png`} alt="" />
+                <img className="icon profile" alt="" />
                 <span>Profile</span>
             </Link>
         </nav>
