@@ -25,7 +25,7 @@ export default function Home() {
             tg.ready();
             const userId = tg.initDataUnsafe?.user?.id;
             const nameTg = tg.initDataUnsafe?.user?.first_name;
-            setName(nameTg);
+            setName(nameTg || "None");
             setTgId(userId);
         }
     }, []);
