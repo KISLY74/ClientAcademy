@@ -142,7 +142,7 @@
                         font-weight: bold;
                     }
 
-                    &__time{
+                    &__time {
                         margin-left: auto;
                         text-align: center;
                         border: 2px solid #232937;
@@ -170,8 +170,8 @@
                             align-items: center;
                             gap: 10px;
 
-
-                            p {
+                            .buy {
+                                color: #01e589;
                                 font-size: 36px;
                                 font-weight: bold;
                                 text-shadow:
@@ -180,8 +180,14 @@
                                     0 0 2px rgba(1, 229, 137, 0.4);
                             }
 
-                            .buy {
-                                color: #01e589;
+                            .sell {
+                                color: #ed1c24;
+                                font-size: 36px;
+                                font-weight: bold;
+                                text-shadow:
+                                    0 0 22px #ed1c24,
+                                    0 0 26px #ed1c24,
+                                    0 0 2px rgba(115, 0, 0, 0.4);
                             }
 
                             img {
@@ -241,5 +247,106 @@
                 }
             }
         }
+
+        .get-signal {
+            margin: 30px 0;
+            font-family: fonts.$mainFont;
+            font-weight: bold;
+            font-size: 22px;
+            border: 1px solid #000;
+            width: 100%;
+            border-radius: 22px;
+            color: #fff;
+            padding: 20px;
+            background-color: #00bcff;
+        }
+
+        .get-signal.wait {
+            color: $greyText;
+            background-color: #4d4d4d;
+
+        }
+
+        .signal-container.wait {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 6px;
+
+            // .spinner {
+            //     width: 28px;
+            //     height: 28px;
+            //     border: 3px solid rgba(255, 255, 255, 0.1);
+            //     border-top-color: #00bcff;
+            //     border-radius: 50%;
+            //     animation: spin 0.8s linear infinite;
+            // }
+
+            // @keyframes spin {
+            //     to {
+            //         transform: rotate(360deg);
+            //     }
+            // }
+
+            .spinner {
+                width: 62px;
+                height: 62px;
+                border: 3px solid rgba(0, 188, 255, 0.15);
+                border-top-color: #00bcff;
+                border-radius: 50%;
+                animation: spin 0.8s linear infinite;
+                box-shadow:
+                    0 0 6px #00bcff,
+                    0 0 12px rgba(0, 188, 255, 0.6),
+                    0 0 18px rgba(0, 188, 255, 0.4);
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .title-text {
+                font-size: 26px;
+                font-weight: bold;
+            }
+
+            .desc-text {
+                margin-top: -14px;
+                color: $greyText;
+            }
+
+            .buy-sell {
+                display: flex;
+                gap: 10px;
+
+                img {
+                    width: 40px;
+                }
+
+                .buy-content {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #01e589;
+                        font-weight: bold;
+                    }
+                }
+
+                .sell-content {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #ed1c24;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
     }
 }
