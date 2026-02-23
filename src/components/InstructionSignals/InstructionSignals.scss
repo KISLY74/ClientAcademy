@@ -1,0 +1,47 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/fonts.scss" as fonts;
+
+.instruction{
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+
+        h1{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .step{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px;
+            border-radius: 10px;
+            background-color: #101825;
+
+            img{
+                object-fit: contain;
+                width: 30px;
+                height: 30px;
+            }
+
+            &-text{
+                
+                .title{
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+
+                .desc{
+                    font-size: 14px;
+                    color: $greyText;
+                }
+            }
+        }
+
+        margin-bottom: 70px;
+    }
+}

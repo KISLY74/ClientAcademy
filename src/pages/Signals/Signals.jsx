@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer"
+import InstructionSignals from "../../components/InstructionSignals/InstructionSignals";
 import "./Signals.scss"
 
 export default function Signals() {
@@ -34,6 +35,10 @@ export default function Signals() {
             generateSignal()
         }, 3000);
     }
+
+    useEffect(() => {
+        
+    }, [])
 
     return <div className="signals">
         <div className="signals-container">
@@ -85,7 +90,6 @@ export default function Signals() {
 
                     <div className="signal-footer">
                         <div className="progress">
-                            {/* {signal.prob === "XX" ? "0%" : signal.prob + "%"} */}
                             <div className="progress-fill" style={{ width: `${signal.prob === "XX" ? "0%" : signal.prob + "%"}` }}></div>
                         </div>
                     </div>
@@ -110,6 +114,7 @@ export default function Signals() {
 
                 {isWait ? <button className="get-signal wait">GET SIGNAL...</button> : <button className="get-signal" onClick={handleGetSignal}>GET SIGNAL</button>}
             </div>
+            <InstructionSignals/>
             <Footer />
         </div>
     </div>
