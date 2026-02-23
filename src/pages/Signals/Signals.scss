@@ -94,5 +94,152 @@
                 }
             }
         }
+
+        .signal {
+            padding: 20px;
+
+            &-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                border-radius: 12px;
+                background-color: #0f2234;
+                padding: 15px;
+
+                border: 1px solid #00bcff;
+                box-shadow:
+                    0 0 6px #00bcff,
+                    // 0 0 2px rgba(1, 229, 137, 0.7),
+                    // 0 0 8px rgba(1, 229, 137, 0.5);
+                    0 0 2px rgba(0, 194, 255, 0.7),
+                    0 0 8px rgba(0, 194, 255, 0.7);
+                background:
+                    linear-gradient(to right,
+                        #0b1220 40%,
+                        rgba(0, 153, 255, 0.12) 70%,
+                        rgba(0, 153, 255, 0.25) 100%,
+                        transparent 100%);
+
+                .signal-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .pair-icons {
+
+                        img {
+                            width: 26px;
+                        }
+
+                        :last-child {
+                            margin-left: -12px;
+                        }
+                    }
+
+                    p.currency-pair {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+
+                    &__time{
+                        margin-left: auto;
+                        text-align: center;
+                        border: 2px solid #232937;
+                        background-color: #0b1220;
+                        padding: 4px 10px;
+                        border-radius: 10px;
+                        width: 80px;
+                        color: $greyText;
+                    }
+                }
+
+                .signal-middle {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+
+                    .left {
+
+                        p {
+                            color: $greyText;
+                        }
+
+                        .left-res {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+
+                            p {
+                                font-size: 36px;
+                                font-weight: bold;
+                                text-shadow:
+                                    0 0 22px #01e589,
+                                    0 0 26px #01e589,
+                                    0 0 2px rgba(1, 229, 137, 0.4);
+                            }
+
+                            .buy {
+                                color: #01e589;
+                            }
+
+                            img {
+                                width: 30px;
+                            }
+                        }
+
+                    }
+
+                    .right {
+
+                        p {
+                            color: $greyText;
+                        }
+
+                        .right-res {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+
+                            img {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            p {
+                                color: #fff;
+                                font-size: 36px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .signal-footer {
+
+                    .progress {
+                        width: 100%;
+                        height: 10px;
+                        background: rgba(255, 255, 255, 0.08);
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+                    }
+
+                    .progress-fill {
+                        height: 100%;
+                        background: #00bcff;
+                        box-shadow:
+                            0 0 6px #00bcff,
+                            0 0 12px rgba(0, 188, 255, 0.7),
+                            0 0 18px rgba(0, 188, 255, 0.5);
+                        border-radius: 10px;
+                        transition: width 0.4s ease;
+                    }
+
+                }
+            }
+        }
     }
 }

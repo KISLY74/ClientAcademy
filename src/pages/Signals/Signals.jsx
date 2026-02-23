@@ -28,14 +28,39 @@ export default function Signals() {
             </div>
 
             <div className="signal">
-                <div className="signal-header">
-                    {/* <img src="" alt="" />  // иконка верх/вниз*/}
+                <div className="signal-container">
+                    <div className="signal-header">
+                        <div className="pair-icons">
+                            <img src={`/images/currencyIcons/${pair.slice(0, 3).toLowerCase()}Icon.png`} alt="" />
+                            <img src={`/images/currencyIcons/${pair.slice(-3).toLowerCase()}Icon.png`} alt="" />
+                        </div>
+                        <p className="currency-pair">{pair}</p>
+                        <p className="signal-header__time">{time}</p>
+                    </div>
 
+                    <div className="signal-middle">
+                        <div className="left">
+                            <p>Direction</p>
+                            <div className="left-res">
+                                <img src="/images/buy.png" alt="" />
+                                <p className="buy">BUY</p>
+                            </div>
+                        </div>
+                        <div className="right">
+                            <p>Probability</p>
+                            <div className="right-res">
+                                <p>94%</p>
+                                <img src="/images/checkmark.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="signal-footer">
+                        <div className="progress">
+                            <div className="progress-fill" style={{width: "94%"}}></div>
+                        </div>
+                    </div>
                 </div>
-
-
-                <></>
-
             </div>
             <Footer />
         </div>
