@@ -5,7 +5,7 @@ import "./Signals.scss"
 export default function Signals() {
     const [time, setTime] = useState('1m')
     const [pair, setPair] = useState('EUR/USD')
-    const [signal, setSignal] = useState({ direction: false, prob: 90 })
+    const [signal, setSignal] = useState({ direction: null, prob: "XX" })
 
     const [access, setAccess] = useState(false);
     const [isWait, setIsWait] = useState(false);
@@ -65,23 +65,28 @@ export default function Signals() {
                     <div className="signal-middle">
                         <div className="left">
                             <p>Direction</p>
-                            <div className="left-res">
-                                <img src={`/images/${signal.direction ? "buy" : "sell"}.png`} alt="" />
-                                {signal.direction ? <p className="buy">BUY</p> : <p className="sell">SELL</p>}
+                            {signal.prob === "XX" ? <div className="left-res">
+                                <img src={`/images/buy.png`} alt="" />
+                                <img src={`/images/sell.png`} alt="" />
                             </div>
+                                : <div className="left-res">
+                                    <img src={`/images/${signal.direction ? "buy" : "sell"}.png`} alt="" />
+                                    {signal.direction ? <p className="buy">BUY</p> : <p className="sell">SELL</p>}
+                                </div>}
                         </div>
                         <div className="right">
                             <p>Probability</p>
                             <div className="right-res">
                                 <p>{signal.prob}%</p>
-                                <img src="/images/checkmark.png" alt="" />
+                                {signal.prob !== "XX" ? <img src="/images/checkmark.png" alt="" /> : ""}
                             </div>
                         </div>
                     </div>
 
                     <div className="signal-footer">
                         <div className="progress">
-                            <div className="progress-fill" style={{ width: "94%" }}></div>
+                            {/* {signal.prob === "XX" ? "0%" : signal.prob + "%"} */}
+                            <div className="progress-fill" style={{ width: `${signal.prob === "XX" ? "0%" : signal.prob + "%"}` }}></div>
                         </div>
                     </div>
                 </div> : <div className="signal-container wait">
