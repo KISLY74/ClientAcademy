@@ -9,7 +9,8 @@ export default function RegisterNow() {
             return;
         }
 
-        const url = `https://u3.shortink.io/register?utm_campaign=837071&utm_source=affiliate&utm_medium=sr&a=jOsaouv3xH4bDH&ac=test&sub_id1=${tgId}`;
+        // const url = `https://u3.shortink.io/register?utm_campaign=837071&utm_source=affiliate&utm_medium=sr&a=jOsaouv3xH4bDH&ac=test&sub_id1=${tgId}`;
+        const url = `https://u3.shortink.io/smart/jOsaouv3xH4bDH?sub_id1=${tgId}`;
 
         window.location.href = url;
     };
