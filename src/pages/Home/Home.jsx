@@ -5,7 +5,7 @@ import RegisterNow from "../../components/RegisterNow/RegisterNow";
 import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
-    const [tgId, setTgId] = useState(8222966719);
+    const [tgId, setTgId] = useState(null);
     const [name, setName] = useState("None")
 
     //    const tg = window.Telegram.WebApp;
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="home">
             <div className="home-container">
                 <Header name={name} />
-                <RegisterNow />
+                <RegisterNow tgId={tgId}/>
                 <Footer />
             </div>
         </div>

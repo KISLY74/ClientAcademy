@@ -1,6 +1,6 @@
 import "./RegisterNow.scss";
 
-export default function RegisterNow() {
+export default function RegisterNow({tgId}) {
 
     const handleRegister = () => {
         if (!tgId) {
