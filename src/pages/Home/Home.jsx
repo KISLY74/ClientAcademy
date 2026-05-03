@@ -7,20 +7,25 @@ import { useContext } from "react";
 import { TgContext } from "../../context/TgContext";
 import Registered from "../../components/Registered/Registered";
 import StatusProgress from "../../components/StatusProgress/StatusProgress";
+import { getUserProfile } from "../../api/user.api";
 
 export default function Home() {
     const { tgId, name } = useContext(TgContext)
-    const [isReg, setIsReg] = useState(true)
+    const [isReg, setIsReg] = useState(false)
 
     useEffect(() => {
-
-    }, []);
+        (async () => {
+            if (!tgId) return;
+            const data = await getUserProfile(tgId);
+            setIsReg(data.registered ?? false);
+        })();
+    }, [tgId]);
 
     return (
         <div className="home">
             <div className="home-container">
                 <Header name={name} />
-                <StatusProgress tgId={tgId}/>
+                <StatusProgress tgId={tgId} />
                 {!isReg ? <RegisterNow tgId={tgId} /> : <Registered />}
                 <Footer />
             </div>
