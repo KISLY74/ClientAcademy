@@ -1,0 +1,33 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/fonts.scss" as fonts;
+
+.section {
+
+    font-family: fonts.$mainFont;
+    margin: 20px 0;
+    padding: 20px;
+
+    &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 16px;
+        padding: 15px;
+        background:
+            radial-gradient(circle at top left, rgba(52, 198, 8, 0.18), transparent 60%),
+            radial-gradient(circle at bottom right, rgba(13, 242, 81, 0.15), transparent 60%),
+            #111c2e;
+
+        p {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        img{
+            width: 50px;
+        }
+    }
+}
