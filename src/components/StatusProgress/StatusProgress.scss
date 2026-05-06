@@ -10,9 +10,13 @@
         border-radius: 12px;
         margin: 20px;
         background:
-            radial-gradient(circle at top left, rgba(1, 191, 249, 0.486), transparent 60%),
-            radial-gradient(circle at bottom right, rgba(1, 191, 249, 0.3), transparent 60%),
-            #011b44;
+            radial-gradient(circle at top left, rgba(18, 24, 38, 1), transparent 60%),
+            radial-gradient(circle at bottom right, rgba(18, 24, 38, 1), transparent 60%),
+            #121826;
+        // background:
+        //     radial-gradient(circle at top left, rgba(1, 191, 249, 0.486), transparent 60%),
+        //     radial-gradient(circle at bottom right, rgba(1, 191, 249, 0.3), transparent 60%),
+        //     #011b44;
 
         .status-header {
             display: flex;
@@ -28,7 +32,7 @@
 
             .status-total {
                 font-size: 14px;
-                color: #4caf50;
+                color: #00c896;
                 font-weight: bold;
             }
         }
@@ -42,7 +46,7 @@
 
             .progress-fill {
                 height: 100%;
-                background: #4caf50;
+                background: #00c896;
                 border-radius: 999px;
                 transition: width 0.4s ease;
             }

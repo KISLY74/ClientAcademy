@@ -8,7 +8,7 @@ import { TgContext } from "./context/TgContext";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [tgId, setTgId] = useState(111222333);
+  const [tgId, setTgId] = useState(123484625);
   const [name, setName] = useState("None");
 
   useEffect(() => {

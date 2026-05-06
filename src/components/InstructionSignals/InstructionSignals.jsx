@@ -23,7 +23,7 @@ export default function InstructionSignals() {
                 <img src="/images/isActivate.png" alt="" />
                 <div className="step-text">
                     <p className="title">3. Activate</p>
-                    <p className="desc">Fund your account to unlock signals</p>
+                    <p className="desc">Top up your account with $10 to unlock signals.</p>
                 </div>
             </div>
         </div>

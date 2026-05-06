@@ -264,7 +264,10 @@
         .get-signal.wait {
             color: $greyText;
             background-color: #4d4d4d;
-
+        }
+        .get-signal.not-exist {
+            color: #ffffff;
+            background-color: #0d2fa0;
         }
 
         .signal-container.wait {

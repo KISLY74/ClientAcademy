@@ -64,7 +64,7 @@ export default function Signals() {
         const fetchConfig = async () => {
             try {
                 const data = await getSignalConfig(tgId);
-                if (!data.exists) return;
+                // if (!data.exists) return;
 
                 setConfig(data);
                 setSignalsUsed(data.signals_used);
@@ -80,8 +80,12 @@ export default function Signals() {
         fetchConfig();
     }, [tgId]);
     if (loading) return <div className="signals"><p>Loading...</p></div>;
-    if (!config) return <div className="signals"><p>Error loading config</p></div>;
-    const limitReached = config.signals_limit !== null && signalsUsed >= config.signals_limit;
+    // if (!config) return <div className="signals"><p>Error loading config</p></div>;
+    let limitReached = false
+
+    if (config) {
+        limitReached = config.signals_limit !== null && signalsUsed >= config.signals_limit;
+    }
     return <div className="signals">
         <div className="signals-container">
             <div className="signals-counter">
@@ -175,9 +179,11 @@ export default function Signals() {
                         <p>Wait {error.secondsLeft} seconds before next signal</p>
                     </div>
                 )}
-
+                    
                 {limitReached ? (
                     <button className="get-signal disabled" disabled>LIMIT REACHED</button>
+                ) : !config.exist ? (
+                    <button className="get-signal not-exist" disabled>Top up $10 to unlock</button>
                 ) : isWait ? (
                     <button className="get-signal wait" disabled>GET SIGNAL...</button>
                 ) : (
