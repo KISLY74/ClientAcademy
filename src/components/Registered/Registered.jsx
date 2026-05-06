@@ -4,7 +4,7 @@ import "./Registered.scss";
 export default function Registered({ tgId }) {
 
     return <section className="section section-registered">
-        <div className="section-container">
+        <div className="section-registered-container">
             <img src="/images/completed.png" alt="" />
             <p>Register completed</p>
         </div>
