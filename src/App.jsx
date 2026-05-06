@@ -8,7 +8,7 @@ import { TgContext } from "./context/TgContext";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [tgId, setTgId] = useState(123484625);
+  const [tgId, setTgId] = useState(null);
   const [name, setName] = useState("None");
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
       const userId = tg.initDataUnsafe?.user?.id;
       const nameTg = tg.initDataUnsafe?.user?.first_name;
       setName(nameTg || "None");
-      // setTgId(userId);
+      setTgId(userId);
     }
   }, [])
 
