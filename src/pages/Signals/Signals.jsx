@@ -58,6 +58,12 @@ export default function Signals() {
         }
     };
 
+    const handleLinkDeposit = () =>{
+
+        window.open('https://pocketoption.com/en/cabinet/deposit-step-1/')
+
+    }
+
     useEffect(() => {
         if (!tgId) return;
 
@@ -183,7 +189,7 @@ export default function Signals() {
                 {limitReached ? (
                     <button className="get-signal disabled" disabled>LIMIT REACHED</button>
                 ) : !config.exist ? (
-                    <button className="get-signal not-exist" disabled>Top up $10 to unlock</button>
+                    <button className="get-signal not-exist" disabled onClick={handleLinkDeposit}>Top up $10 to unlock</button>
                 ) : isWait ? (
                     <button className="get-signal wait" disabled>GET SIGNAL...</button>
                 ) : (
