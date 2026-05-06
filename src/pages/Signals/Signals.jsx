@@ -60,7 +60,7 @@ export default function Signals() {
 
     const handleLinkDeposit = () =>{
 
-        window.open('https://pocketoption.com/en/cabinet/deposit-step-1/')
+        window.open('https://pocketoption.com/en/cabinet/deposit-step-1/', '_blank')
 
     }
 
