@@ -189,7 +189,7 @@ export default function Signals() {
                 {limitReached ? (
                     <button className="get-signal disabled" disabled>LIMIT REACHED</button>
                 ) : !config.exist ? (
-                    <button className="get-signal not-exist" disabled onClick={handleLinkDeposit}>Top up $10 to unlock</button>
+                    <button className="get-signal not-exist" onClick={handleLinkDeposit}>Top up $10 to unlock</button>
                 ) : isWait ? (
                     <button className="get-signal wait" disabled>GET SIGNAL...</button>
                 ) : (
