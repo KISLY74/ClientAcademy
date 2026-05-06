@@ -1,0 +1,38 @@
+/* Контейнер, который центрирует лоудер */
+.pa-loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;        /* занимает всю высоту экрана */
+  width: 100%;
+}
+
+/* Сам лоудер */
+.pa-loader {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 32px;
+}
+
+.pa-loader .bar {
+  width: 6px;
+  height: 10px;
+  background: #01bff9;
+  border-radius: 3px;
+  animation: pulse 0.8s infinite ease-in-out;
+}
+
+.pa-loader .bar:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.pa-loader .bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0% { height: 10px; opacity: 0.6; }
+  50% { height: 28px; opacity: 1; }
+  100% { height: 10px; opacity: 0.6; }
+}

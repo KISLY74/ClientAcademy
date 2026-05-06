@@ -11,28 +11,8 @@ const LEVELS = [
     { name: "legend", min: 5000, max: 5000 },
 ];
 
-export default function StatusProgress({ tgId }) {
-    const [status, setStatus] = useState(null);
-    const [loading, setLoading] = useState(true);
+export default function StatusProgress({ tgId, status }) {
 
-    useEffect(() => {
-        if (!tgId) return;
-
-        const fetchStatus = async () => {
-            try {
-                const data = await getUserStatus(tgId);
-                setStatus(data);
-            } catch (e) {
-                console.error("Status fetch error:", e);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchStatus();
-    }, [tgId]);
-
-    if (loading) return <div className="status-progress"><p>Loading...</p></div>;
     if (!status) return null;
 
     const current = LEVELS.find(l => l.name === status.status);
