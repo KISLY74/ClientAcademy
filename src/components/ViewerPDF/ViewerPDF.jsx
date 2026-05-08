@@ -1,12 +1,27 @@
+import "./ViewerPDF.scss"
+
 export default function ViewerPDF() {
     return <div className="viewer">
         <div className="viewer-container">
-            <iframe
-                src="https://www.calameo.com/read/0082193536fbbd16b258b?authid=XOFlb0SPUsDb"
-                width="100%"
-                height="500px"
-                allowFullScreen
-            />
+            <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                <iframe
+                    src="https://drive.google.com/file/d/1Le2VWMNZOoTi-XlPLmRiQauxJbU1Hc9S/preview"
+                    width="100%"
+                    height="100%"
+                    allowFullScreen
+                    style={{ border: "none", display: "block" }}
+                />
+                <div style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "60px",
+                    height: "60px",
+                    // background: "#1a1a1a",
+                    zIndex: 10,
+                }} />
+            </div>
         </div>
+
     </div>
 }
