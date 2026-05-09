@@ -10,12 +10,14 @@ import StatusProgress from "../../components/StatusProgress/StatusProgress";
 import { getUserProfile, getUserStatus } from "../../api/user.api";
 import Loader from "../../components/Loader/Loader"
 import Products from "../../components/Products/Products";
+import { getProducts } from "../../api/product.api";
 
 export default function Home() {
     const { tgId, name } = useContext(TgContext)
     const [isReg, setIsReg] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [status, setStatus] = useState(null)
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
 
@@ -28,8 +30,12 @@ export default function Home() {
 
                 const dataStatus = await getUserStatus(tgId);
                 setStatus(dataStatus);
+
+                const dataProducts = await getProducts(tgId);
+                setProducts(dataProducts.products);
+
             } catch (e) {
-                console.log("User error: ", e)
+                console.log("Home error: ", e)
             } finally {
                 setIsLoading(false)
             }
@@ -47,9 +53,11 @@ export default function Home() {
                     <>
                         <StatusProgress status={status} tgId={tgId} />
                         {!isReg ? <RegisterNow tgId={tgId} /> : <Registered />}
+                        <>
+                            <Products products={products} />
+                        </>
                     </>
                 }
-                <Products/>
                 <Footer />
             </div>
         </div>
