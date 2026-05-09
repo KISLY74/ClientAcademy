@@ -1,0 +1,88 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/fonts.scss" as fonts;
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 20px;
+
+    &-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        color: $mainText;
+        font-family: fonts.$mainFont;
+        border: 1px solid $greyDark;
+        border-radius: 16px;
+        padding: 15px;
+        gap: 20px;
+
+        &__wrapper-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px outset $greyDark;
+            align-self: flex-start;
+
+            img {
+                width: 40px;
+                object-fit: contain;
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+
+            .content-text {
+
+                &__title {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+
+                &__desc {
+                    font-size: 12px;
+                    color: $greyText;
+                }
+            }
+
+            .content-footer {
+                display: flex;
+                justify-content: space-between;
+
+                &__price {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                &__btn {
+                    border: none;
+                    border-radius: 10px;
+                    color: $mainText;
+                    padding: 6px;
+                    font-weight: bold;
+                    background-color: #00c896;
+                }
+            }
+        }
+
+        &__status {
+            position: absolute;
+            border-radius: 8px;
+            font-size: 12px;
+            padding: 4px;
+            background-color: $greyDark;
+            right: 10px;
+            top: -15px;
+        }
+    }
+}

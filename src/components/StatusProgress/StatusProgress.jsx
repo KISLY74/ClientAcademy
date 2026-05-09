@@ -30,6 +30,7 @@ export default function StatusProgress({ tgId, status }) {
                     <p className="status-name">{status.status.toUpperCase()}</p>
                     <p className="status-total">${status.total}</p>
                 </div>
+                {/* {status.total > 0 && status.total < 10 ? <p className="info"> more to unlock <br/></p> : <></>} */}
                 <div className="progress-bar">
                     <div className="progress-fill" style={{ width: `${progress}%` }}></div>
                 </div>

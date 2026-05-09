@@ -9,6 +9,7 @@ import Registered from "../../components/Registered/Registered";
 import StatusProgress from "../../components/StatusProgress/StatusProgress";
 import { getUserProfile, getUserStatus } from "../../api/user.api";
 import Loader from "../../components/Loader/Loader"
+import Products from "../../components/Products/Products";
 
 export default function Home() {
     const { tgId, name } = useContext(TgContext)
@@ -48,6 +49,7 @@ export default function Home() {
                         {!isReg ? <RegisterNow tgId={tgId} /> : <Registered />}
                     </>
                 }
+                <Products/>
                 <Footer />
             </div>
         </div>
