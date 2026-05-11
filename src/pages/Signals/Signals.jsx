@@ -96,9 +96,9 @@ export default function Signals() {
         <div className="signals-container">
 
             {isLoading ? <Loader /> : <>
-                <div className="signals-counter">
+                {/* <div className="signals-counter">
                     <p>{signalsUsed} / {config.signals_limit ?? "∞"} signals today</p>
-                </div>
+                </div> */}
                 <div className="pairs">
                     <p>Currency pair</p>
                     <div className="pairs-content">

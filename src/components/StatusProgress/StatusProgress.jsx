@@ -11,7 +11,7 @@ const LEVELS = [
     { name: "legend", min: 5000, max: 5000 },
 ];
 
-export default function StatusProgress({ tgId, status }) {
+export default function StatusProgress({ tgId, status, inner_balance }) {
 
     if (!status) return null;
 
@@ -28,7 +28,8 @@ export default function StatusProgress({ tgId, status }) {
             <div className="status-progress__container">
                 <div className="status-header">
                     <p className="status-name">{status.status.toUpperCase()}</p>
-                    <p className="status-total">${status.total}</p>
+                    <p className="status-total">{status.total} $</p>
+                    <p className="status-innerbalance">{inner_balance} ACT</p>
                 </div>
                 {/* {status.total > 0 && status.total < 10 ? <p className="info"> more to unlock <br/></p> : <></>} */}
                 <div className="progress-bar">

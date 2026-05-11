@@ -15,10 +15,17 @@
         flex-grow: 1;
         color: $mainText;
         font-family: fonts.$mainFont;
-        border: 1px solid $greyDark;
+        box-shadow:
+            0 4px 24px #00715514,
+            0 1px 2px $greyDark;
         border-radius: 16px;
         padding: 15px;
         gap: 20px;
+
+        background:
+            radial-gradient(circle at top left, #121826, transparent 60%),
+            radial-gradient(circle at bottom right, #00c896, transparent 40%),
+            #121826;
 
         &__wrapper-img {
             display: flex;
@@ -68,9 +75,10 @@
                     border: none;
                     border-radius: 10px;
                     color: $mainText;
-                    padding: 6px;
+                    padding: 10px;
                     font-weight: bold;
-                    background-color: #00c896;
+                    box-shadow: 2px 2px 70px 2px #000; //
+                    background-color: #00c896; //
                 }
             }
         }
@@ -84,5 +92,27 @@
             right: 10px;
             top: -15px;
         }
+    }
+
+    .owned {
+        border-color: $blueP;
+        box-shadow:
+            0 4px 18px #0d0d7526,
+            0 3px 4px #00ccff66;
+
+        background:
+            radial-gradient(circle at top left, #121826, transparent 60%),
+            radial-gradient(circle at bottom right, $blueP, transparent 40%),
+            #121826;
+
+        .product-container__wrapper-img {
+            border: 2px inset $blueP;
+
+        }
+
+        .btn-open {
+            background-color: $blueP;
+        }
+
     }
 }

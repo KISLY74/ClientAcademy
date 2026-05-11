@@ -31,8 +31,13 @@
             }
 
             .status-total {
-                font-size: 14px;
+                font-size: 16px;
                 color: #00c896;
+                font-weight: bold;
+            }
+            .status-innerbalance{
+                font-size: 14px;
+                color: #fff;
                 font-weight: bold;
             }
         }

@@ -18,6 +18,7 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true)
     const [status, setStatus] = useState(null)
     const [products, setProducts] = useState([])
+    const [innerBalance, setInnerBalance] = useState(0)
 
     useEffect(() => {
 
@@ -26,6 +27,7 @@ export default function Home() {
                 if (!tgId) return;
 
                 const data = await getUserProfile(tgId);
+                setInnerBalance(data.inner_balance)
                 setIsReg(data.registered ?? false);
 
                 const dataStatus = await getUserStatus(tgId);
@@ -51,10 +53,10 @@ export default function Home() {
                 <Header name={name} />
                 {isLoading ? <Loader /> :
                     <>
-                        <StatusProgress status={status} tgId={tgId} />
+                        <StatusProgress status={status} tgId={tgId} inner_balance={innerBalance}/>
                         {!isReg ? <RegisterNow tgId={tgId} /> : <Registered />}
                         <>
-                            <Products products={products} />
+                            <Products products={products} inner_balance={innerBalance}/>
                         </>
                     </>
                 }
